@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 30px;
+            text-decoration: solid;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home">Home</a>
+        <a href="about">About</a>
+        <a href="employments">Employments</a>
+        <a href="certificate">Certificate</a>
+    </nav>
+    <hr>
+    <div style="padding: 10px; background-color: rgb(239, 225, 225); margin: 20px">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
