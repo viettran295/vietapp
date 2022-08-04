@@ -2,16 +2,15 @@
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link href="styling.css"/>
+    <link rel="stylesheet" href="static/styling.css" type="text/css">
     <script src="https://kit.fontawesome.com/0625555087.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div style="padding: 10px;background-color:black">
-    <nav>
         <a href="{{url_for('about')}}">About</a>
         <a href="employments">Employments</a>
         <a href="certificate">Certificate</a>
-    </nav>
+        <a href="projects">Projects</a>
     </div>
     <hr>
     <div style="padding: 10px; background-color: rgb(239, 225, 225); margin: 20px;">
