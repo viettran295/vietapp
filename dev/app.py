@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import datetime
 
 app = Flask(__name__)
@@ -11,9 +11,15 @@ def about():
 def employments():
     return render_template("employments.html")
 
-@app.route("/certificate")
+@app.route("/certificate", methods=['POST','GET'])
 def certificate():
-    return render_template("certificate.html")
+    if request.method == "POST":
+        if request.form.get("img_to_text") == 'Scanned PDF to Text':
+            noti = "This function will be updated soon..."
+    else:
+        request.method == "GET"
+        return render_template("certificate.html")
+    return render_template("certificate.html", notification=noti)
 
 @app.route("/projects")
 def projects():
