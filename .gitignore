@@ -1,5 +1,8 @@
 vietapp-env/
 
+*.jpg
+*.pdf
+
 *.pyc
 __pycache__/
 
