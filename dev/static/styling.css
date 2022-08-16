@@ -27,7 +27,7 @@
     transition: opacity 0.3s;
 }
 .chat-popup{
-    display: none;
+    display: flex;
     position: fixed;
     bottom:80px;
     right:120px;
