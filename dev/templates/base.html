@@ -14,10 +14,21 @@
         <a href="projects">Projects</a>
     </div>
 
+    <!-- CONTENT -->
     <div style="padding: 20px; background-color: rgb(239, 225, 225); margin: 20px;">
         {% block content %}{% endblock %}
     </div>
-    <iframe src="https://webchat.botframework.com/embed/vietapp-bot?s=wL6Cd-5MT7E.GBugEMoOCMmzIu3rNAUDfvMX56ieyJEmLOXggrE26iA" style="height: 300px; width: 500px;"></iframe>
+
+    <!-- CHATBOT -->
+    <button class="chat-btn" onclick="">
+        <i class="fa fa-commenting-o comment"></i> 
+    </button>
+
+    <div class="chat-popup">
+        <iframe src="https://webchat.botframework.com/embed/vietapp-bot?s=wL6Cd-5MT7E.GBugEMoOCMmzIu3rNAUDfvMX56ieyJEmLOXggrE26iA" style="height: 300px; width: 100%;"></iframe>
+    </div>
+
+    <!-- FOOTER -->
     <footer class="footer">
     <a href="mailto:viettran295@gmail.com">
         <span style="font-size: 20px; text-transform: lowercase; color: white">

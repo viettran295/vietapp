@@ -14,6 +14,35 @@
     margin-left: 30px;
     text-decoration: solid;
 } 
+.chat-btn{
+    position: fixed;
+    right:50px;
+    bottom: 50px;
+    background: rgb(215, 109, 109);
+    color: black;
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.chat-popup{
+    display: none;
+    position: fixed;
+    bottom:80px;
+    right:120px;
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75rem;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+    border-radius: 10px;
+}
+.show{
+    display: flex;
+}
 .title {
     color: black;
     font-size: 25px;
