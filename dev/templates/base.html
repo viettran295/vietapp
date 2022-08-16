@@ -20,8 +20,10 @@
     </div>
 
     <!-- CHATBOT -->
-    <button class="chat-btn" onclick="">
-        <i class="fa fa-commenting-o comment"></i> 
+    <button type="button" class="chat-btn">
+        <span style="font-size: 25px;">
+            <i class="fa-regular fa-message"></i>
+        </span>
     </button>
 
     <div class="chat-popup">
@@ -49,5 +51,8 @@
     <br>
         Copyright 2022 &copy VietTran
     </footer>
+
+    <!-- JAVASCRIPT FOR CHATBOT BUTTON -->
+    <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 </html>

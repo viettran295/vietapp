@@ -18,16 +18,16 @@
     position: fixed;
     right:50px;
     bottom: 50px;
-    background: rgb(215, 109, 109);
-    color: black;
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     width:60px;
     height: 60px;
     border-radius: 50%;
     opacity: 0.8;
-    transition: opacity 0.3s;
 }
 .chat-popup{
-    display: flex;
+    display: none;
     position: fixed;
     bottom:80px;
     right:120px;
@@ -37,7 +37,6 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 0.75rem;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
     border-radius: 10px;
 }
 .show{
