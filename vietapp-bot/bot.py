@@ -30,4 +30,4 @@ class MyBot(ActivityHandler):
     ):
         for member_added in members_added:
             if member_added.id != turn_context.activity.recipient.id:
-                await turn_context.send_activity("Welcome to Viet's bot! This bot will be updated soon...")
+                await turn_context.send_activity("Welcome to Vietbot! Just ask me something")
