@@ -10,6 +10,6 @@ class DefaultConfig:
     PORT = 3978
     APP_ID = os.environ.get("MicrosoftAppId", "")
     APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "")
-    QNA_KNOWLEDGEBASE_ID = os.environ.get("QnAKnowledgebaseId", "f127e3ea-c802-419d-af33-f88d54bad1d6")
-    QNA_ENDPOINT_KEY = os.environ.get("QnAEndpointKey", "12029db3-552d-4b3e-ac6a-a22913032845")
-    QNA_ENDPOINT_HOST = os.environ.get("QnAEndpointHostName", "https://qna-vietapp.azurewebsites.net/qnamaker")
+    QNA_KNOWLEDGEBASE_ID = os.environ.get("QnAKnowledgebaseId", "63358840-6bd8-41f2-9139-ff6f23b0cbe3")
+    QNA_ENDPOINT_KEY = os.environ.get("QnAEndpointKey", "ba6d0e3c-d6c4-40ee-80bc-6fe55b942393")
+    QNA_ENDPOINT_HOST = os.environ.get("QnAEndpointHostName", "https://qna-bot-vietapp.azurewebsites.net/qnamaker")
