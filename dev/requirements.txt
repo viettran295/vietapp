@@ -3,4 +3,3 @@ botbuilder-core
 asyncio
 aiohttp
 cookiecutter==1.7.0
-jyserver
