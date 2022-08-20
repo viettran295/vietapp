@@ -3,6 +3,7 @@ import datetime
 
 app = Flask(__name__)
 
+txt = ''''''
 @app.route("/")
 def about():
     return render_template("about.html")
@@ -15,7 +16,7 @@ def employments():
 def certificate():
     if request.method == "POST":
         if request.form.get("img_to_text") == 'Scanned PDF to Text':
-            noti = "This function will be updated soon..."
+            noti = txt
     else:
         request.method == "GET"
         return render_template("certificate.html")

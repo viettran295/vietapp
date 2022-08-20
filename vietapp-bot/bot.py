@@ -17,11 +17,14 @@ class MyBot(ActivityHandler):
     
     async def on_message_activity(self, turn_context: TurnContext):
         # await turn_context.send_activity(f"You said '{ turn_context.activity.text }'")
-        response = await self.qna_maker.get_answers(turn_context)
-        if response and len(response)>0:
-            await turn_context.send_activity(MessageFactory.text(response[0].answer))
+        if "translate:" in turn_context.activity.text:
+            await turn_context.send_activities("Your result: ...")
         else:
-            await turn_context.send_activities("Sorry i dont have answer, please try other question")
+            response = await self.qna_maker.get_answers(turn_context)
+            if response and len(response)>0:
+                await turn_context.send_activity(MessageFactory.text(response[0].answer))
+            else:
+                await turn_context.send_activities("Sorry i dont have answer, please try other question")
 
     async def on_members_added_activity(
         self,
