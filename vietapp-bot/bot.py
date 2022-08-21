@@ -26,7 +26,7 @@ class MyBot(ActivityHandler):
         # print(len(result.entities))
         # await turn_context.send_activity(f" Luis Result {result.entities[0]}")
 
-        if len(result.entities) >= 1:
+        if intent == "Translation" and len(result.entities) >= 1:
             return await turn_context.send_activity("Translation: ...")
         else:
             response = await self.qna_maker.get_answers(turn_context)
