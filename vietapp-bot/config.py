@@ -18,3 +18,6 @@ class DefaultConfig:
     LUIS_API_KEY = os.environ.get("LuisAPIKey", "7209b1bba256424482b3d9104b39c93c")
     # LUIS endpoint host name, ie "westus.api.cognitive.microsoft.com"
     LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "https://bot-vietapp.cognitiveservices.azure.com/")
+
+    TRANSLATE_KEY = "d07c486a86e04ccf90651d02c1b49ac1"
+    TRANSLATE_LOCATION = "westeurope"
