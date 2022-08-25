@@ -14,14 +14,19 @@ def employments():
 
 @app.route("/certificate", methods=['POST','GET'])
 def certificate():
-    if request.method == "POST":
-        if request.form.get("img_to_text") == 'Scanned PDF to Text':
-            noti = txt
-    else:
-        request.method == "GET"
-        return render_template("certificate.html")
-    return render_template("certificate.html", notification=noti)
+    # if request.method == "POST":
+    #     if request.form.get("img_to_text") == 'Scanned PDF to Text':
+    #         noti = txt
+    # else:
+    #     request.method == "GET"
+    #     return render_template("certificate.html")
+    # return render_template("certificate.html", notification=noti)
+    return render_template("certificate.html")
 
 @app.route("/projects")
 def projects():
     return render_template("projects.html")
+
+@app.route("/bot_architekture")
+def bot_architekture():
+    return render_template("bot_architekture.html")

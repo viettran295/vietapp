@@ -1,5 +1,6 @@
 vietapp-env/
 
+config.py
 *.jpg
 *.pdf
 
