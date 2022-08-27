@@ -19,5 +19,10 @@ class DefaultConfig:
     # LUIS endpoint host name, ie "westus.api.cognitive.microsoft.com"
     LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "https://bot-vietapp.cognitiveservices.azure.com/")
 
-    TRANSLATE_KEY = "d07c486a86e04ccf90651d02c1b49ac1"
-    TRANSLATE_LOCATION = "westeurope"
+class TranslatorConfig:
+        TRANSLATOR_KEY = "d07c486a86e04ccf90651d02c1b49ac1"
+        # Endpoint for text
+        TRANSLATOR_ENDPOINT = "https://api.cognitive.microsofttranslator.com"
+        TRANSLATOR_LOCATION = "westeurope"
+        TRANSLATE_PATH = "/translate"
+        TRANSLATE_CONSTRUCTED_URL = TRANSLATOR_ENDPOINT + TRANSLATE_PATH

@@ -5,7 +5,7 @@ from botbuilder.schema import ChannelAccount
 from botbuilder.ai.qna import QnAMaker, QnAMakerEndpoint
 from botbuilder.ai.luis import LuisApplication, LuisPredictionOptions, LuisRecognizer
 from translator.translator_app import Translator_App
-from config import DefaultConfig
+from config import DefaultConfig, TranslatorConfig
 
 class MyBot(ActivityHandler):
     def __init__(self, config: DefaultConfig):

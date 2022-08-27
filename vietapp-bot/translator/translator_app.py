@@ -1,15 +1,17 @@
 from urllib import request, response
 import requests, uuid, json
 from typing import List
+from config import TranslatorConfig
+
 
 class Translator_App:
     def __init__(self, to_language: str) -> None:        
-        self.key = "d07c486a86e04ccf90651d02c1b49ac1"
+        self.key = TranslatorConfig.TRANSLATOR_KEY
         # Endpoint for text
-        self.endpoint = "https://api.cognitive.microsofttranslator.com"
-        self.location = "westeurope"
-        self.path = "/translate"
-        self.contructed_url = self.endpoint + self.path
+        self.endpoint = TranslatorConfig.TRANSLATOR_ENDPOINT
+        self.location = TranslatorConfig.TRANSLATOR_LOCATION
+        self.path = TranslatorConfig.TRANSLATE_PATH
+        self.contructed_url = TranslatorConfig.TRANSLATOR_ENDPOINT + TranslatorConfig.TRANSLATE_PATH
 
         self.params = {
             'api-version': '3.0',
@@ -31,10 +33,10 @@ class Translator_App:
         to_json = json.dumps(response, sort_keys=True, ensure_ascii=False, indent=4, separators=(',',':'))
         response_list = []
         for i in range(len(response[0]['translations'])):
-            response_list.append(response[0]['translations'][i]['text'])
+            response_list.append(response[0]['translations'][i]['text'])    
         return response_list
 
 # test = Translator_App('en')
-# response = test.translate_text("meine Familie wohnt in deutschland")
+# response = test.translate_text("ich studiere informatik")
 
 # print(response)

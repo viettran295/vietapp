@@ -1,9 +1,13 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 import datetime
+from speech_translator.speech_translator import Speech
+from config import SpeechConfig
 
 app = Flask(__name__)
 
-txt = ''''''
+speech_config = SpeechConfig()
+speech = Speech(speech_config)
+
 @app.route("/")
 def about():
     return render_template("about.html")
@@ -30,3 +34,16 @@ def projects():
 @app.route("/bot_architekture")
 def bot_architekture():
     return render_template("bot_architekture.html")
+
+@app.route("/speech_translator", methods=['POST','GET'])
+def speech_translator():
+    if request.method == "POST":
+        result = speech.recognize_from_microphone()
+        return render_template("speech_translator.html", result=result)
+    else:
+        return render_template("speech_translator.html")
+
+if __name__=="__main__":
+    app.secret_key = 'super secret key'
+    app.config['SESSION_TYPE'] = 'filesystem'
+    app.run(debug=True,host='0.0.0.0')

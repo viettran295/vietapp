@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Speech Translator</h1>
+<h3 class="content">This function will translate your speech from German to English</h3>
+<h3 class="content" style="font-weight: normal;">Press "Start" and speak to your microphone</h3>
+
+<form method="POST">
+    <input type="submit" name="start" value="Start to speak">
+</form>
+
+<h3 class="content" style="font-weight: normal;">Your result: {{result}}</h3>
+{% endblock %}
