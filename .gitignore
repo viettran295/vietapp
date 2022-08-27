@@ -3,6 +3,7 @@ vietapp-env/
 config.*
 *.jpg
 *.pdf
+*.zip
 
 *.pyc
 __pycache__/
