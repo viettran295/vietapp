@@ -9,7 +9,3 @@ function convertPDF_text(){
     var popup = document.getElementById("PDFtoText");
     popup.classList.toggle('showpopup')
 }
-
-startRecording.onclick() = e =>{
-    console.log('Speak into your microphone')
-}

@@ -1,12 +1,12 @@
-from flask import Flask, render_template, request, flash
-import datetime
-from speech_translator.speech_translator import Speech
-from config import SpeechConfig
+from flask import Flask, abort, render_template, request, flash, make_response, send_from_directory, current_app
+import os
+# from speech_translator.speech_translator import Speech
+# from config import SpeechConfig
 
 app = Flask(__name__)
 
-speech_config = SpeechConfig()
-speech = Speech(speech_config)
+# speech_config = SpeechConfig()
+# speech = Speech(speech_config)
 
 @app.route("/")
 def about():
@@ -18,13 +18,6 @@ def employments():
 
 @app.route("/certificate", methods=['POST','GET'])
 def certificate():
-    # if request.method == "POST":
-    #     if request.form.get("img_to_text") == 'Scanned PDF to Text':
-    #         noti = txt
-    # else:
-    #     request.method == "GET"
-    #     return render_template("certificate.html")
-    # return render_template("certificate.html", notification=noti)
     return render_template("certificate.html")
 
 @app.route("/projects")
@@ -37,13 +30,25 @@ def bot_architekture():
 
 @app.route("/speech_translator", methods=['POST','GET'])
 def speech_translator():
-    if request.method == "POST":
-        result = speech.recognize_from_microphone()
-        return render_template("speech_translator.html", result=result)
-    else:
-        return render_template("speech_translator.html")
+    return render_template("speech_translator.html")
 
-if __name__=="__main__":
-    app.secret_key = 'super secret key'
-    app.config['SESSION_TYPE'] = 'filesystem'
-    app.run(debug=True,host='0.0.0.0')
+@app.route('/upload', methods=['POST'])
+def upload():
+    if request.method == "POST":
+        if 'audio_file' in request.files:
+            file = request.files['audio_file']
+            # while True:
+            #     dst = os.path.join(current_app.instance_path,
+            #                         current_app.config.get('UPLOAD_FOLDER','upload'))
+            #     if not os.path.exists(dst):
+            #         break
+            file.save(file.filename)
+        return make_response('', 200)
+        
+@app.route("/static/<path:path>")
+def send_static(path):
+    return send_from_directory('static', path)
+# if __name__=="__main__":
+#     app.secret_key = 'super secret key'
+#     app.config['SESSION_TYPE'] = 'filesystem'
+#     app.run(debug=True,host='0.0.0.0')
