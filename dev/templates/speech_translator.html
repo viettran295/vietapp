@@ -4,11 +4,12 @@
 <h3 class="content">This function will translate your speech from German to English</h3>
 <br>
 
-<script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+<form method="POST">
+    <input type="submit" value="Start to speak">
+</form>
+<!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
 <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js"></script>
-<script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.js"></script>
-
-<script src={{url_for('send_static', path="record.js")}}></script>
+<script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.js"></script> -->
 
 <!-- <button onclick="getAudioStream()">Start to speak</button> -->
 <h4 class="content" style="font-weight: normal;">Your result: {{result}}</h4>
