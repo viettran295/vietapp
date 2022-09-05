@@ -1,12 +1,11 @@
-from flask import Flask, abort, render_template, request, send_from_directory
-import os
-# from speech_translator.speech_translator import Speech
-# from config import SpeechConfig
+from unittest import result
+from winreg import REG_RESOURCE_REQUIREMENTS_LIST
+from flask import Flask, abort, render_template, request, make_response
+from translator_app.translator_app import Translator_App
 
 app = Flask(__name__)
 
-# speech_config = SpeechConfig()
-# speech = Speech(speech_config)
+trans = Translator_App('en')
 
 @app.route("/")
 def about():
@@ -31,9 +30,12 @@ def bot_architekture():
 @app.route("/speech_translator", methods=['POST','GET'])
 def speech_translator():
     if request.method == "POST":
-        # result = speech.recognize_from_microphone()
-        result = "This function will be updated soon"
-        return render_template("speech_translator.html", result=result)
+        recognized = request.form['data']
+        print(recognized)
+        result = trans.translate_text(recognized)
+        print(result[0])
+        make_response('', 200)
+        return render_template("speech_translator.html", recognized=recognized, result=result)
     else:
         return render_template("speech_translator.html")
         

@@ -11,12 +11,37 @@ function convertPDF_text(){
 }
 
 async function getMedia() {
-  let stream = null;
-  try {
-    stream = await navigator.mediaDevices.getUserMedia({audio: true});
-    console.log(stream);
-  } catch (err) {
-    document.write(err);
-  }
+  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const recognition = new SpeechRecognition();
+  recognition.interimResult = true;
+  recognition.lang = 'de-DE';
+  const URL = 'http://127.0.0.1:5000/speech_translator';
+
+  recognition.addEventListener('result', (e) => {
+    const text = Array.from(e.results)
+      .map(result => result[0])
+      .map(result => result.transcript).join('');
+    console.log(text);
+  
+    $.post(URL, {
+      data: text,
+    });
+
+  //   let formData = new FormData();
+  //   formData.append('speech', text);
+  //   fetch(URL, {
+  //     method: 'POST',
+  //     cache: 'no-cache',
+  //     body: formData,
+  //   }).then(resp => {
+  //     if(resp.status !== 200){
+  //       console.error("Error: ", resp);
+  //     }
+  //   }).catch(err => {
+  //     console.error(err);
+  //   });
+  });
+
+  recognition.start();
 };
 
