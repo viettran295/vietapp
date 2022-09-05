@@ -1,12 +1,12 @@
 from flask import Flask, abort, render_template, request, send_from_directory
 import os
-from speech_translator.speech_translator import Speech
-from config import SpeechConfig
+# from speech_translator.speech_translator import Speech
+# from config import SpeechConfig
 
 app = Flask(__name__)
 
-speech_config = SpeechConfig()
-speech = Speech(speech_config)
+# speech_config = SpeechConfig()
+# speech = Speech(speech_config)
 
 @app.route("/")
 def about():
