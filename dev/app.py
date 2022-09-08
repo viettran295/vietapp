@@ -1,6 +1,4 @@
-from unittest import result
-from winreg import REG_RESOURCE_REQUIREMENTS_LIST
-from flask import Flask, abort, render_template, request, make_response
+from flask import Flask, render_template, request
 from translator_app.translator_app import Translator_App
 
 app = Flask(__name__)
@@ -30,18 +28,9 @@ def bot_architekture():
 @app.route("/speech_translator", methods=['POST','GET'])
 def speech_translator():
     if request.method == "POST":
-        recognized = request.form['data']
-        print(recognized)
-        result = trans.translate_text(recognized)
-        print(result[0])
-        make_response('', 200)
-        return render_template("speech_translator.html", recognized=recognized, result=result)
-    else:
-        return render_template("speech_translator.html")
+        pass
+    return render_template("speech_translator.html")
         
-# @app.route("/static/<path:path>")
-# def send_static(path):
-#     return send_from_directory('static', path)
 
 if __name__=="__main__":
     app.secret_key = 'super secret key'
