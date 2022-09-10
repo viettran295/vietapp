@@ -48,7 +48,7 @@ a {
     right:65px;
     height: 400px;
     width: 350px;
-    background-color: rgb(230, 211, 211);
+    background-color: rgb(81, 247, 81);
     padding: 1rem;
     border-radius: 25px;
 }
@@ -59,7 +59,7 @@ a {
     position: absolute;
     display: inline-block;
     cursor: pointer;
-    right: 30px;
+    right: 70px;
 }
 .popup .popuptext {
   visibility: hidden;
@@ -117,4 +117,8 @@ a {
     border-radius: 8px;
     padding: 5px;
     width: 50%;
+}
+img {
+    border-radius: 50%;
+    width: 100px;
 }
